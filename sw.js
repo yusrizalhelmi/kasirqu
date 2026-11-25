@@ -1,10 +1,13 @@
 // KasirQu Service Worker — enables offline use & install-to-home-screen when hosted.
 // Cache-first strategy for the app shell; network fallback for everything else.
-const CACHE='kasirqu-v1';
-const APP_SHELL=['./','./kasirqu.html','./sw.js'];
+const CACHE='kasirqu-v2';
+// Try each file independently so one 404 (e.g. '/' on static hosts) doesn't abort the whole install.
+const APP_SHELL=['./','./index.html','./kasirqu.html','./sw.js'];
 
 self.addEventListener('install',e=>{
-  e.waitUntil(caches.open(CACHE).then(c=>c.addAll(APP_SHELL)).then(()=>self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE)
+    .then(c=>Promise.all(APP_SHELL.map(u=>c.add(u).catch(()=>{}))))
+    .then(()=>self.skipWaiting()));
 });
 
 self.addEventListener('activate',e=>{
