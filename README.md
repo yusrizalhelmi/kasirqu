@@ -1,0 +1,2 @@
+# kasirqu
+Aplikasi kasir UMKM
