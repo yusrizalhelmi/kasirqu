@@ -1498,15 +1498,9 @@ const Panduan={
       <div class="panduan-grid">
         <div class="panduan-card" style="background:linear-gradient(135deg,#ecfdf5,#fff);border-color:var(--green)">
           <h3 style="margin:0 0 10px">📱 Pasang di Layar Utama & Offline</h3>
-          <p class="text-sm" style="margin:0 0 12px">Supaya KasirQu seperti aplikasi native di HP (bisa dibuka dari ikon layar utama, jalan tanpa internet), host aplikasi online dulu — fitur PWA hanya jalan di URL <code>http/https</code>, tidak di <code>file://</code>.</p>
+          <p class="text-sm" style="margin:0 0 12px">Supaya KasirQu seperti aplikasi native di HP (bisa dibuka dari ikon layar utama, jalan tanpa internet), fitur PWA hanya jalan di URL <code>http/https</code>, tidak di <code>file://</code>. Jadi pastikan aplikasi sudah di-hosting online dulu.</p>
           <div style="background:var(--bg);border-radius:var(--radius-sm);padding:12px;margin-bottom:12px;font-size:13px;line-height:1.6">
-            <b>1. Hosting gratis (pilih satu):</b><br>
-            • <b>Netlify Drop</b> (paling mudah): buka app.netlify.com/drop → drag folder berisi <code>index.html</code> + <code>sw.js</code> → dapat URL<br>
-            • <b>GitHub Pages</b>: upload 2 file ke repo → Settings → Pages<br>
-            • <b>Vercel</b>: import repo → deploy
-          </div>
-          <div style="background:var(--bg);border-radius:var(--radius-sm);padding:12px;margin-bottom:12px;font-size:13px;line-height:1.6">
-            <b>2. Pasang di HP:</b> buka URL di Chrome/Safari → menu (⋮ / Share) → <b>"Tambahkan ke layar utama"</b>. Setelah dibuka sekali, jalan <b>offline</b>.
+            <b>Pasang di HP:</b> buka URL di Chrome/Safari → menu (⋮ / Share) → <b>"Tambahkan ke layar utama"</b>. Setelah dibuka sekali, jalan <b>offline</b>.
           </div>
           <p class="text-sm text-muted" style="margin:0">Data tetap di perangkat Anda (privat). Hosting hanya untuk akses URL.</p>
         </div>
@@ -1565,7 +1559,7 @@ const Panduan={
       {q:'Apakah data saya aman? Tersimpan di mana?',a:'Semua data (produk, transaksi, pengaturan) disimpan di IndexedDB browser perangkat Anda — tidak diunggah ke internet. Aman & privat. <b>Risiko:</b> kalau cache browser dibersihkan, HP diganti, atau Safari iPhone mengosongkan storage situs lama, data bisa hilang. Karena itu aplikasi menampilkan <b>banner pengingat backup</b> otomatis tiap 3 hari (merah setelah 7 hari) dengan tombol Backup (unduh JSON) dan Kirim WA (bagikan file backup ke WhatsApp Anda sendiri). Lakukan backup rutin.'},
       {q:'Kenapa laporan laba di Pembukuan terlihat 100%?',a:'<b>Laba kotor</b> dihitung dari Omzet − Harga Modal (HPP) − Pajak. Jika Anda belum mengisi "Harga Modal" saat menambah produk, modal dianggap 0 sehingga laba tampak 100%. Edit produk dan isi kolom Modal agar laba akurat. Catatan: ini <b>laba kotor</b> — biaya operasional (listrik, sewa, gaji, transport) belum ikut dipotong.'},
       {q:'Bisa dipakai di HP?',a:'Bisa. Buka file index.html di browser HP (Chrome/Safari). Tampilan otomatis menyesuaikan layar kecil. <b>Untuk pasang ke layar utama & jalan offline</b>, host aplikasi online dulu (lihat kartu "Pasang di Layar Utama") — membuka dari file lokal (file://) tidak stabil untuk fitur ini.'},
-      {q:'Cara pasang ke layar utama & pakai offline?',a:'<b>1.</b> Host aplikasi online (Netlify Drop / GitHub Pages / Vercel — lihat kartu di bawah). <b>2.</b> Buka URL-nya di Chrome/Safari HP. <b>3.</b> Menu browser (⋮ atau Share) → "Tambahkan ke layar utama" / "Add to Home Screen". Setelah dibuka sekali, aplikasi jalan offline tanpa internet. Data tetap di perangkat Anda.'},
+      {q:'Cara pasang ke layar utama & pakai offline?',a:'<b>1.</b> Host aplikasi online dulu (mis. GitHub Pages atau Netlify Drop) sehingga punya URL <code>http/https</code>. <b>2.</b> Buka URL-nya di Chrome/Safari HP. <b>3.</b> Menu browser (⋮ atau Share) → "Tambahkan ke layar utama" / "Add to Home Screen". Setelah dibuka sekali, aplikasi jalan offline tanpa internet. Data tetap di perangkat Anda.'},
       {q:'Bagaimana cara menghapus riwayat agar tidak membebani HP?',a:'Menu Riwayat → tombol "🗑 Hapus Riwayat". Pilih hapus bulan ini, bulan lalu, rentang tanggal tertentu, atau hapus semua. Stok produk TIDAK dikembalikan saat hapus, dan data hilang permanen — jadi cetak/backup dulu sebelum menghapus.'},
       {q:'Bisa pakai di beberapa device dengan data tersinkron?',a:'Versi ini client-side only (data per perangkat, tanpa server pusat). Untuk multi-device sinkron dibutuhkan backend — silakan hubungi WhatsApp saya jika butuh versi seperti itu.'},
       {q:'Printer thermal apa yang didukung?',a:'KasirQu cetak lewat browser, jadi cocok untuk printer yang terinstal di sistem (thermal 58mm/80mm, inkjet, laser). Pilih ukuran 58/80mm untuk thermal kecil, A4 untuk laser. Hubungkan printer ke komputer/laptop/HP sesuai petunjuk printer Anda.'},
